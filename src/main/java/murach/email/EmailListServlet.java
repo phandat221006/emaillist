@@ -1,4 +1,56 @@
 package murach.email;
 
-public class EmailListServlet {
+import java.io.*;
+
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import murach.business.User;
+import murach.data.UserDB;
+
+@WebServlet(name = "EmailListServlet", urlPatterns = {"/emailList"})
+public class EmailListServlet extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String url = "/index.html";
+
+        // Lấy action từ form hoặc query param
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "join";
+        }
+
+        // Thực hiện theo action
+        if (action.equals("join")) {
+            url = "/index.html";
+        } else if (action.equals("add")) {
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
+            String email = request.getParameter("email");
+
+            User user = new User(firstName, lastName, email);
+            UserDB.insert(user);
+
+            // Đưa đối tượng user vào request scope
+            request.setAttribute("user", user);
+            url = "/thanks.jsp";
+        }
+
+        // Chuyển tiếp tới View
+        getServletContext()
+                .getRequestDispatcher(url)
+                .forward(request, response);
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        doPost(request, response);
+    }
 }
