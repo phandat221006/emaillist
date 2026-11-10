@@ -1,0 +1,12 @@
+.git
+.idea
+.smarttomcat
+.mvn
+target/
+*.iml
+*.log
+README.md
+Dockerfile
+.dockerignore
+docker-compose*.yml
+

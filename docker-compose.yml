@@ -1,0 +1,10 @@
+services:
+  email-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: email-servlet-app
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
