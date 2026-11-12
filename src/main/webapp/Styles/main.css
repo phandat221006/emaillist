@@ -1,0 +1,203 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11pt;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding: 0 40px;
+}
+
+h1, h2 {
+    color: teal;
+    margin: 20px 0 14px;
+}
+
+label {
+    float: left;
+    width: 9em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="email"], input[type="date"] {
+    width: 15em;
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+br {
+    clear: both;
+}
+.card {
+    display: grid;
+    grid-template-columns: 10em 1fr;
+    background-color: #fff;
+    border: 2px solid teal;
+    border-radius: 6px;
+    padding: 8px 24px;
+    margin: 16px 0 20px;
+}
+
+.card dt,
+.card dd {
+    margin: 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #e4eeee;
+}
+
+.card dt {
+    font-weight: bold;
+    color: #005f5f;
+}
+
+.card dd {
+    word-break: break-word;
+}
+
+.card dt:last-of-type,
+.card dd:last-of-type {
+    border-bottom: none;
+}
+
+.note {
+    color: #555;
+}
+
+body {
+    background-color: #eef4f4;
+    color: #222;
+    line-height: 1.5;
+    max-width: 680px;
+}
+
+img {
+    display: block;
+    max-width: 150px;
+    height: auto;
+    margin: 24px auto 0;
+}
+
+h1 {
+    font-size: 200%;
+    padding-bottom: 8px;
+    border-bottom: 3px solid teal;
+    text-align: center;
+}
+
+h2 {
+    font-size: 140%;
+}
+
+form[method="post"] {
+    background-color: #fff;
+    border: 2px solid teal;
+    border-radius: 6px;
+    padding: 8px 28px 24px;
+    margin: 16px 0 40px;
+}
+
+form[method="post"] h2 {
+    padding-bottom: 6px;
+    border-bottom: 1px solid #d5e5e5;
+}
+
+form[method="post"] h2:first-of-type {
+    margin-top: 12px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select {
+    padding: 5px 8px;
+    border: 1px solid #9bbcbc;
+    border-radius: 3px;
+    font-size: 100%;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"] {
+    width: 18em;
+    margin-bottom: 12px;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid teal;
+    outline-offset: 1px;
+}
+
+form[method="post"] label {
+    padding-top: 6px;
+    margin-bottom: 12px;
+    color: #005f5f;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 0 6px 0 16px;
+    accent-color: teal;
+}
+
+input[type="radio"]:first-of-type {
+    margin-left: 0;
+}
+
+select {
+    margin-left: 8px;
+}
+
+input[type="submit"] {
+    background-color: teal;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 9px 26px;
+    font-size: 100%;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #005f5f;
+}
+
+.card {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 600px) {
+    body {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 16px;
+    }
+
+    form[method="post"] {
+        padding: 8px 16px 20px;
+    }
+
+    form[method="post"] label {
+        float: none;
+        display: block;
+        width: auto;
+        margin-bottom: 4px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"] {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .card {
+        grid-template-columns: 1fr;
+    }
+
+    .card dt {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}

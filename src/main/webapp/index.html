@@ -1,26 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Murach's Java Servlets and JSP</title>
+    <link rel="stylesheet" href="Styles/main.css">
 </head>
 <body>
-<h1>Join our email list</h1>
-<p>To join our email list, enter your name and email address below.</p>
-
-<form action="emailList" method="post">
+<img src="images/images.png" alt="logo murach">
+<h1>Survey</h1>
+<p>if you have a moment, we'd appreciate if you would fill out this survey.</p>
+<form action="survey" method="post">
     <input type="hidden" name="action" value="add">
+    <h2>Your information:</h2>
+    <label>First Name</label>
+    <input type="text" name="firstName" required><br>
+    <label>Last Name</label>
+    <input type="text" name="lastName" required><br>
+    <label>Email</label>
+    <input type="email" name="email" required><br>
+    <label>Date of Birth</label>
+    <input type="date" name="dob" required><br>
 
-    <label>Email:</label>
-    <input type="email" name="email" required><br><br>
+    <h2>How did you hear about us?</h2>
+    <input type="radio" name="heardFrom" value="search" checked>Search engine
+    <input type="radio" name="heardFrom" value="word">Word of mouth
+    <input type="radio" name="heardFrom" value="social">Social Media
+    <input type="radio" name="heardFrom" value="other">Other
 
-    <label>First Name:</label>
-    <input type="text" name="firstName" required><br><br>
+    <h2>Would you like to receive announcements<br>about new CDs and special offers?</h2>
+    <input type="checkbox" name="wantsAnnouncements" value="yes">YES, I'd like that.<br><br>
+    <input type="checkbox" name="wantsEmail" value="yes">YES, please send me email announcements.<br><br>
 
-    <label>Last Name:</label>
-    <input type="text" name="lastName" required><br><br>
-
-    <input type="submit" value="Join Now">
+    Please contact me by:
+    <select name="contactBy">
+        <option value="emailOrPost">Email or postal mail</option>
+        <option value="email">Email only</option>
+        <option value="post">Postal mail only</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
 </form>
 </body>
 </html>

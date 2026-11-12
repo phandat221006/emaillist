@@ -1,24 +1,53 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Murach's Java Servlets and JSP</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
-    <h1>Thanks for joining our email list</h1>
-    <p>Here is the information that you entered:</p>
+        <img src="images/logo.jpg" alt="logo murach">
+        <h1>Thanks for joining our email list</h1>
 
-    <label>Email:</label>
-    <span>${user.email}</span><br>
+    <main>
+        <p>Here is the information that you entered:</p>
 
-    <label>First Name:</label>
-    <span>${user.firstName}</span><br>
+        <dl class="card">
+            <dt>First Name:</dt>
+            <dd>${user.firstName}</dd>
 
-    <label>Last Name:</label>
-    <span>${user.lastName}</span><br><br>
+            <dt>Last Name:</dt>
+            <dd>${user.lastName}</dd>
 
-    <p>To enter another email address, click on the Return button below.</p>
-    <a href="emailList?action=join"><button type="button">Return</button></a>
+            <dt>Email:</dt>
+            <dd>${user.email}</dd>
+
+            <dt>Date of Birth:</dt>
+            <dd>${user.dateOfBirth}</dd>
+
+            <dt>Heard about us:</dt>
+            <dd>${survey.source}</dd>
+
+            <dt>Announcements:</dt>
+            <dd>${survey.receiveAnnouncements ? 'Yes' : 'No'}</dd>
+
+            <dt>Special Offers:</dt>
+            <dd>${survey.receiveOffers ? 'Yes' : 'No'}</dd>
+
+            <dt>Contact method:</dt>
+            <dd>${survey.contactMethod}</dd>
+        </dl>
+
+        <p class="note">To enter another email address, click on the Back
+           button in your browser or the Return button shown below.</p>
+
+        <form action="emailList" method="get">
+            <input type="hidden" name="action" value="join">
+            <input type="submit" value="Return">
+        </form>
+    </main>
 </body>
 </html>
